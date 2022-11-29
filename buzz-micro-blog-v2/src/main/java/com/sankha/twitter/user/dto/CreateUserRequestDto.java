@@ -8,11 +8,9 @@ import com.sankha.twitter.follower.Follower;
 import lombok.Data;
 
 @Data
-public class UserResponseDto {
-	private Long userId;
+public class CreateUserRequestDto {
 	private String userName;
 	private String password;
 	private String email;
-	
 	private List<Follower> followers;
 }
