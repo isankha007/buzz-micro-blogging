@@ -18,12 +18,12 @@ public class UserController {
 	@Autowired
     private UserService usersService;
     
-    @PostMapping("")
+    /*@PostMapping("")
     public ResponseEntity<UserResponseDto> createUser(
             @RequestBody CreateUserRequestDto request
     ) {
         var createdUser = usersService.createUser(request);
         return ResponseEntity.created(URI.create("/users/" + createdUser.getUserId())).body(createdUser);
-    }
+    }*/
 
 }
