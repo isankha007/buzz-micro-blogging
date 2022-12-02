@@ -24,11 +24,11 @@ public class Follower {
 	private Long Id;
 	
 	@ManyToOne(targetEntity = UserEntity.class)
-    @JoinColumn(name = "followee")
+    @JoinColumn(name = "follower")
 	private UserEntity follower;
 	
 	@ManyToOne(targetEntity = UserEntity.class)
-    @JoinColumn(name = "follower")
+    @JoinColumn(name = "followee")
 	private UserEntity following;
 	
 	

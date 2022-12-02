@@ -13,6 +13,7 @@ public class UserResponseDto {
 	private String userName;
 	private String password;
 	private String email;
+	public boolean is_followed_by_user;
 	
 	private List<Follower> followers;
 }
