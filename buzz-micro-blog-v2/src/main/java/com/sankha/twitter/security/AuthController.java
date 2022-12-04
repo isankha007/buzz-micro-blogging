@@ -37,8 +37,7 @@ public class AuthController {
 	private ApiResponse apiResponse;
 	@Autowired
 	private LoginDto loginDto;
-	@Autowired
-	private UserRepository userRepository;
+
 	
 	
 
@@ -71,7 +70,7 @@ public class AuthController {
 		
 		final UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
 		final String jwt = jwtTokenUtil.generateToken(userDetails);
-		UserEntity LoggedInUser = userRepository.findByUsername(user.getUsername());
+		UserEntity LoggedInUser = userCrudService.findByUsername(user.getUsername());
 		
 		loginDto.setJwt(jwt);
 		loginDto.setUsername(user.getUsername());
