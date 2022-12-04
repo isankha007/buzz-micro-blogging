@@ -101,6 +101,10 @@ public class UserService {
 		
 		return tweetersList;
 	}
+
+	public UserEntity findByUsername(String username) {
+		return userRepo.findByUsername(username);
+	}
 	
   /*public UserResponseDto createUser(CreateUserRequestDto request) {
 	  var user = modelMapper.map(request, UserEntity.class);
