@@ -35,7 +35,7 @@ public class TweetCotroller {
 	@GetMapping(path = "/tweet/feed", produces = "application/json")
 	public ResponseEntity<Object> getFeed(Authentication authentication)
 	{			
-        UserEntity LoggedInUser = userRepo.findByUserName(authentication.getName());
+        UserEntity LoggedInUser = userRepo.findByUsername(authentication.getName());
         List<Tweet> userFeed = tweetService.getFeed(LoggedInUser);
 	    apiResponse.setMessage("User Feed!");
 	    apiResponse.setData(userFeed);	    

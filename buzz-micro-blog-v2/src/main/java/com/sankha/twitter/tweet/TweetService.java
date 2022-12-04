@@ -40,7 +40,7 @@ public class TweetService {
 	  
 	  public Tweet createTweet(Authentication authentication, Tweet newTweet)
 		{		
-	        UserEntity LoggedInUser = userRepo.findByUserName(authentication.getName());
+	        UserEntity LoggedInUser = userRepo.findByUsername(authentication.getName());
 	        newTweet.setTweetAuthor(LoggedInUser);
 	      
 	       // Timestamp currentTimestamp = timestampUtil.currentTimestamp();

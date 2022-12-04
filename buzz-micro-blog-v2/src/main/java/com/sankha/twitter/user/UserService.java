@@ -35,7 +35,7 @@ public class UserService {
 		if(user_exists(user)) throw new Exception("User already exists!");
 		
 		String UserEmail = user.getEmail().trim();
-		String UserUsername = user.getUserName().trim();
+		String UserUsername = user.getUsername().trim();
 		String UserPassword = user.getPassword().trim();
 		
 		boolean UsernameIsNotValid = (UserUsername == null) || !UserUsername.matches("[A-Za-z0-9_]+");
@@ -70,14 +70,14 @@ public class UserService {
 	
 	private Boolean user_exists(UserEntity user)
 	{
-		if(userRepo.findByUserName(user.getUserName()) != null) return true;
+		if(userRepo.findByUsername(user.getUsername()) != null) return true;
 		if(userRepo.findByEmail(user.getEmail()) != null) return true;
 		return false;
 	}
 	public TweetersList listUsers(Authentication authentication)
 	{
-		UserEntity LoggedInUser = userRepo.findByUserName(authentication.getName());
-		List<UserEntity> userList = userRepo.findByUserNameNot(LoggedInUser.getUserName());
+		UserEntity LoggedInUser = userRepo.findByUsername(authentication.getName());
+		List<UserEntity> userList = userRepo.findByUsernameNot(LoggedInUser.getUsername());
 		
 		TweetersList tweetersList = new TweetersList();
 		for(UserEntity user: userList)
@@ -85,7 +85,7 @@ public class UserService {
 			UserResponseDto tweeter = new UserResponseDto();
 			tweeter.setUserId(user.getUserId());
 			//tweeter.user_id = user.getUser_id();
-			tweeter.setUserName(user.getUserName());
+			tweeter.setUsername(user.getUsername());
 			//tweeter.username = user.getUsername();
 			//tweeter.email = user.getEmail();
 			tweeter.setEmail(user.getEmail());

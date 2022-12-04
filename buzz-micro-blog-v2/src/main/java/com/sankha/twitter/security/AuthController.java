@@ -53,17 +53,28 @@ public class AuthController {
 	}
 	
 	@PostMapping(value = "/authenticate", consumes = "application/json", produces = "application/json")
-	public ResponseEntity<Object> authenticateUser(@RequestBody UserEntity user)
+	public ResponseEntity<Object> authenticateUser(@RequestBody CreateUserRequestDto user)
 	{
-		Authentication auth = new UsernamePasswordAuthenticationToken(user.getUserName(), user.getPassword());
+//		Authentication auth = authenticationManager
+//                .authenticate(
+//                        new UsernamePasswordAuthenticationToken(
+//                        		user.getUsername(), user.getPassword()
+//                        )
+//                    );
+	      //authenticationManager.authenticate(new 
+	    	//	  UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+
+		Authentication auth = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword());
 		authenticationManager.authenticate(auth); 
+				//new UsernamePasswordAuthenticationToken(user.getUserName(), user.getPassword());
+		//authenticationManager.authenticate(auth); 
 		
-		final UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUserName());
+		final UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
 		final String jwt = jwtTokenUtil.generateToken(userDetails);
-		UserEntity LoggedInUser = userRepository.findByUserName(user.getUserName());
+		UserEntity LoggedInUser = userRepository.findByUsername(user.getUsername());
 		
 		loginDto.setJwt(jwt);
-		loginDto.setUsername(user.getUserName());
+		loginDto.setUsername(user.getUsername());
 		loginDto.setUserid(LoggedInUser.getUserId());
 		
 		apiResponse.setMessage("Auth Token!");
