@@ -28,7 +28,7 @@ public class Follower {
 	private UserEntity follower;
 	
 	@ManyToOne(targetEntity = UserEntity.class)
-    @JoinColumn(name = "followee")
+    @JoinColumn(name = "following")
 	private UserEntity following;
 	
 	

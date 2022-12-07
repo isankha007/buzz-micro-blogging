@@ -27,7 +27,7 @@ public class TweetCotroller {
     private TweetService tweetService;
 	
 	@Autowired
-	private UserRepository userRepo;
+	private UserService userService;
 	
 	@Autowired
 	private ApiResponse apiResponse;
@@ -35,7 +35,7 @@ public class TweetCotroller {
 	@GetMapping(path = "/tweet/feed", produces = "application/json")
 	public ResponseEntity<Object> getFeed(Authentication authentication)
 	{			
-        UserEntity LoggedInUser = userRepo.findByUsername(authentication.getName());
+        UserEntity LoggedInUser = userService.findByUsername(authentication.getName());
         List<Tweet> userFeed = tweetService.getFeed(LoggedInUser);
 	    apiResponse.setMessage("User Feed!");
 	    apiResponse.setData(userFeed);	    
@@ -53,11 +53,11 @@ public class TweetCotroller {
 		return new ResponseEntity<>(apiResponse.getBodyResponse(),HttpStatus.CREATED);
 	}
     
-    @PostMapping("")
-    public ResponseEntity<TweetResposeDto> createTweet(
-            @RequestBody CreateTweetDto request
-    ) {
-        var createdTweet = tweetService.createTweet(request);
-        return ResponseEntity.created(URI.create("/tweet/" + createdTweet.getTweetId())).body(createdTweet);
-    }
+//    @PostMapping("")
+//    public ResponseEntity<TweetResposeDto> createTweet(
+//            @RequestBody CreateTweetDto request
+//    ) {
+//        var createdTweet = tweetService.createTweet(request);
+//        return ResponseEntity.created(URI.create("/tweet/" + createdTweet.getTweetId())).body(createdTweet);
+//    }
 }
