@@ -1,5 +1,6 @@
 package com.sankha.twitter.tweet;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
@@ -11,6 +12,7 @@ import com.sankha.twitter.tweet.dto.CreateTweetDto;
 import com.sankha.twitter.tweet.dto.TweetResposeDto;
 import com.sankha.twitter.user.UserEntity;
 import com.sankha.twitter.user.UserRepository;
+import com.sankha.twitter.util.TimestampUtil;
 
 @Service
 public class TweetService {
@@ -22,7 +24,8 @@ public class TweetService {
 	
 	  @Autowired
 	  private ModelMapper modelMapper;
-	  
+	  @Autowired
+	  TimestampUtil timestampUtil;
 	  
 	  public List<Tweet> getFeed(UserEntity loggedInUser)
 		{
@@ -43,7 +46,9 @@ public class TweetService {
 	        UserEntity LoggedInUser = userRepo.findByUsername(authentication.getName());
 	        newTweet.setTweetAuthor(LoggedInUser);
 	      
-	       // Timestamp currentTimestamp = timestampUtil.currentTimestamp();
+	        Timestamp currentTimestamp = timestampUtil.currentTimestamp();
+	        newTweet.setCreated(currentTimestamp);
+	        newTweet.setUpdated(currentTimestamp);
 	       // newTweet.setTweet_created_at(currentTimestamp );
 	       // newTweet.setTweet_updated_at(currentTimestamp );        
 	        return tweetRepo.save(newTweet);
