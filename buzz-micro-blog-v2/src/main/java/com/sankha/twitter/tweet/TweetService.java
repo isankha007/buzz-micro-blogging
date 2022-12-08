@@ -34,10 +34,11 @@ public class TweetService {
 			if(userTweets.size() > 0) latestUserTweet = userTweets.get(0);
 
 			List<Tweet> followTweets = tweetRepo.findTweetsThatUserFollows(loggedInUser);
-			/*if(latestUserTweet != null && latestUserTweet.getUpdated().after(timestampUtil.oneMinuteBackTimestamp()))
+			if(latestUserTweet != null && latestUserTweet.getUpdated().after(timestampUtil.oneMinuteBackTimestamp()))
 			{
 				followTweets.add(0,latestUserTweet);
-			}*/
+			}
+			followTweets.addAll(showMyTweets(loggedInUser.getUserId()));
 			return followTweets;
 		}
 	  
@@ -67,6 +68,21 @@ public class TweetService {
 	      
 	      return response;
 	}
+	
+	
+	
+   public Tweet getTweet(Long id) throws Exception {
+	   Tweet tweet= tweetRepo.findById(id).orElse(null);
+	   if(tweet==null) {
+		   throw new Exception("Tweet not found");
+	   }
+	   return tweet;
+   }
+   
+   public List<Tweet> showMyTweets(long userId){
+	   List<Tweet> tweets= tweetRepo.findLatestTweetByUser(userId);
+	   return tweets;
+   }
 	
  
 }

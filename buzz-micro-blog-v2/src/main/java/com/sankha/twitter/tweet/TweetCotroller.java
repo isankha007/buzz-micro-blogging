@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,6 +53,16 @@ public class TweetCotroller {
 
 		return new ResponseEntity<>(apiResponse.getBodyResponse(),HttpStatus.CREATED);
 	}
+	
+	@GetMapping(path = "/tweet/user/{user_id}", produces = "application/json")
+	public ResponseEntity<Object> showTweetsByUser(@PathVariable("user_id") long user_id)
+	{			
+		List<Tweet> userTweets = tweetService.showMyTweets(user_id);    
+	    apiResponse.setMessage("Tweets by user");
+	    apiResponse.setData(userTweets);
+	    
+		return new ResponseEntity<>(apiResponse.getBodyResponse(),HttpStatus.OK);
+	}	
     
 //    @PostMapping("")
 //    public ResponseEntity<TweetResposeDto> createTweet(
