@@ -26,4 +26,17 @@ public class FollowerService {
 		followee.setFollowing(followingUser);
 		followRepo.save(followee);
 	}
+	
+	public void unfollowUser(Authentication authentication,Long followingId) throws Exception {
+		UserEntity loggedInUser= userRepository.findByUsername(authentication.getName());
+		UserEntity followingUser= userRepository.findById(followingId).orElse(null);
+		if(followingUser==null) {
+			throw new Exception("User not found");
+		}
+		Follower followee=followRepo.findByFolloweeAndFollower(followingUser, loggedInUser).orElse(null);
+		if(followee==null) {
+			throw new Exception("User not following " + followingUser.getUsername());
+		}
+		followRepo.delete(followee);
+	}
 }

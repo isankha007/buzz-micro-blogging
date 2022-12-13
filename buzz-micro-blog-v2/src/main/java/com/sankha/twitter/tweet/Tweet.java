@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import com.sankha.twitter.like.LikeEntity;
 import com.sankha.twitter.reply.Reply;
 import com.sankha.twitter.user.UserEntity;
+import com.sankha.twitter.media.Media;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -45,6 +46,13 @@ public class Tweet {
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name="likes")
 	private List<LikeEntity> likes;
+	
+	
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name="media")
+	private List<Media> medias;
+	
+	
 	
 	
 	
