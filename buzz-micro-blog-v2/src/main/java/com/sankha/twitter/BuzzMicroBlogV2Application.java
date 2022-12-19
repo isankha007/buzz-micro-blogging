@@ -44,7 +44,7 @@ public class BuzzMicroBlogV2Application implements CommandLineRunner{
 	
 	private ApiInfo apiDetails()
 	{
-		return new ApiInfo("Tweety API"
+		return new ApiInfo("Buzz API"
 			, "Twitter clone in Spring Boot. Allows user creation, user can follow another user, tweet and comment."
 			, "1.0"
 			, "Free to use"
