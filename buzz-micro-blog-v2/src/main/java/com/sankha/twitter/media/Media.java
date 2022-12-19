@@ -22,12 +22,14 @@ import lombok.NoArgsConstructor;
 public class Media {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long replyId;
+	private Long mediaId;
 	
 	private String fileName;
 	private String fileType;
 	private Timestamp created;
 	private Timestamp updated;
+	private String url;
+
 	
 	@ManyToOne(targetEntity = Tweet.class)
 	private Tweet tweet;

@@ -2,10 +2,16 @@ package com.sankha.twitter;
 
 import java.util.Collections;
 
+import javax.annotation.Resource;
+
 import org.modelmapper.ModelMapper;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import com.sankha.twitter.fileupload.FilesStorageService;
+
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
@@ -16,7 +22,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 //@ComponentScan(basePackageClasses = TweetCotroller.class)
 //@ComponentScan(basePackages = "com.sankha.twitter.tweet")
-public class BuzzMicroBlogV2Application {
+public class BuzzMicroBlogV2Application implements CommandLineRunner{
+	
+	@Resource
+	 FilesStorageService storageService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BuzzMicroBlogV2Application.class, args);
@@ -48,5 +57,11 @@ public class BuzzMicroBlogV2Application {
 	    public ModelMapper modelMapper() {
 	        return new ModelMapper();
 	    }
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+	    storageService.init();
+	}
 
 }
