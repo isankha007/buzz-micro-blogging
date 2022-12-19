@@ -2,9 +2,6 @@ This is micro blogging app ,like twitter
 
 # buzz-micro-blogging
 
-following this project 
-https://github.com/tkouleris/Tweety
-
 Create Tweet
 POST : req  //send JWT bearer token in header
 
