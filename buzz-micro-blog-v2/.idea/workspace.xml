@@ -1,33 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="20c03c1a-b77a-418d-a7f8-4c7197bab620" name="Changes" comment="" />
+    <list default="true" id="065fc640-5d74-4367-ae4f-cc8dc18b24e0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectId" id="2M4rpXGw2JLifnhM0dh8rkMrHyL" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2M4rubHFWjDWys8xgrtu0H0NZwS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "E:/Development/eclipse-workspace-JAVA-practice-new/eclipse-workspace-JAVA-practice-new/buzz-micro-blog-v2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Development/JavaProjects/MultipleDb/MultipleDb&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.sankha.twitter.util.validate" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.UserServiceClassTests.getList">
+    <configuration name="BuzzMicroBlogV2Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sankha.twitter.BuzzMicroBlogV2Application" />
+      <module name="buzz-micro-blog-v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sankha.twitter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuzzMicroBlogV2ApplicationTests.getList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="buzz-micro-blog-v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sankha.twitter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sankha.twitter" />
+      <option name="MAIN_CLASS_NAME" value="com.sankha.twitter.BuzzMicroBlogV2ApplicationTests" />
+      <option name="METHOD_NAME" value="getList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceClassTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="buzz-micro-blog-v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sankha.twitter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sankha.twitter" />
+      <option name="MAIN_CLASS_NAME" value="com.sankha.twitter.UserServiceClassTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceClassTests.createUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="buzz-micro-blog-v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sankha.twitter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sankha.twitter" />
+      <option name="MAIN_CLASS_NAME" value="com.sankha.twitter.UserServiceClassTests" />
+      <option name="METHOD_NAME" value="createUserTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceClassTests.getList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="buzz-micro-blog-v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sankha.twitter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sankha.twitter" />
+      <option name="MAIN_CLASS_NAME" value="com.sankha.twitter.UserServiceClassTests" />
+      <option name="METHOD_NAME" value="getList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserServiceClassTests.getList" />
+        <item itemvalue="JUnit.UserServiceClassTests.createUserTest" />
+        <item itemvalue="JUnit.BuzzMicroBlogV2ApplicationTests.getList" />
+        <item itemvalue="JUnit.UserServiceClassTests" />
+        <item itemvalue="Application.BuzzMicroBlogV2Application" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="20c03c1a-b77a-418d-a7f8-4c7197bab620" name="Changes" comment="" />
-      <created>1677037879734</created>
+      <changelist id="065fc640-5d74-4367-ae4f-cc8dc18b24e0" name="Changes" comment="" />
+      <created>1677037949422</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1677037879734</updated>
+      <updated>1677037949422</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/sankha/twitter/UserServiceClassTests.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

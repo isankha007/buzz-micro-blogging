@@ -30,7 +30,7 @@ public class UserController {
 	    apiResponse.setMessage("User Lists!");
 	    apiResponse.setData(userList);
 		
-		return new ResponseEntity<>(apiResponse.getBodyResponse(),HttpStatus.CREATED);
+		return new ResponseEntity<>(apiResponse.getBodyResponse(),HttpStatus.OK);
 	}
     
     /*@PostMapping("")
