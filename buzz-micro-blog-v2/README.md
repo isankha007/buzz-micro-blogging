@@ -1,7 +1,9 @@
 # buzz-micro-blogging
 
-following this project 
+basic idea was from this project 
 https://github.com/tkouleris/Tweety
+
+added new features like retweet,like,media upload
 
 Create Tweet
 POST : req  //send JWT bearer token in header
